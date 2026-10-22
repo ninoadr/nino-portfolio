@@ -1,77 +1,178 @@
-cd ~/PERSO/Github/nino-portfolio
-
-cat << 'EOF' > index.html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nino Audren - Portfolio</title>
-  <style>
-    body {
-      font-family: system-ui, -apple-system, sans-serif;
-      background-color: #0f172a;
-      color: #f8fafc;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      text-align: center;
-    }
-    .card {
-      padding: 2rem;
-      border: 1px solid #1e293b;
-      border-radius: 12px;
-      background: #1e293b66;
-    }
-    h1 { color: #38bdf8; margin-bottom: 0.5rem; }
-    p { color: #94a3b8; }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nino Audren, élève-ingénieur en informatique</title>
+<meta name="description" content="Portfolio de Nino Audren, élève-ingénieur en informatique à CY Tech, à la recherche d'une alternance dès septembre 2027.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Newsreader:opsz,wght@6..72,400;6..72,600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F1FFFA;--mint:#D6FFF1;--ink:#2B3035;--soft:#5A6168;--link:#0B6455;--wave:#0E6B5C;--well:rgba(43,48,53,.07);--line:rgba(43,48,53,.18)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 18px/1.65 'Newsreader',Georgia,serif}
+h1,h2,h3{font-family:'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif;line-height:1.1;margin:0}
+a{color:var(--link);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+header.top{display:flex;justify-content:space-between;align-items:center;padding:22px 0;font-family:'Bricolage Grotesque',Arial,sans-serif;font-weight:500;font-size:16px}
+header.top nav{display:flex;gap:24px}
+header.top a{color:var(--ink);text-decoration:none}
+header.top a:hover{text-decoration:underline}
+.hero{display:grid;grid-template-columns:1fr 230px;gap:40px;align-items:center;padding:40px 0 32px}
+.hero h1{font-size:clamp(46px,8vw,92px);font-weight:800;letter-spacing:-.02em}
+.hero p{max-width:34em;font-size:22px;margin:20px 0 28px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{font-family:'Bricolage Grotesque',Arial,sans-serif;font-weight:500;font-size:16px;padding:12px 20px;border:2px solid var(--ink);color:var(--ink);text-decoration:none;border-radius:999px}
+.btn.main{background:var(--ink);color:#fff}
+.btn:hover{background:var(--mint);color:var(--ink)}
+.photo{width:230px;height:230px;border-radius:50%;border:6px solid var(--ink);background:#fff;display:block}
+.band{background:var(--mint);border-block:1px solid var(--line)}
+#wave{display:block;width:100%;height:170px}
+.cap{margin:0;padding:10px 0 14px;font-size:15px;color:var(--soft)}
+section{padding:64px 0 8px}
+h2{font-size:34px;font-weight:800;margin-bottom:28px}
+.proj{display:grid;grid-template-columns:1fr 2fr;gap:24px;padding:26px 0;border-top:1px solid var(--line)}
+.proj h3{font-size:24px;font-weight:800}
+.proj .tech{color:var(--soft);font-size:16px;margin:6px 0 0}
+.proj p{margin:0 0 10px;max-width:38em}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+h3.sub{font-size:20px;font-weight:800;margin-bottom:14px}
+.list{list-style:none;margin:0;padding:0}
+.list li{margin-bottom:16px}
+.list b{font-weight:600}
+.list span{display:block;color:var(--soft);font-size:16px}
+dl{margin:0;display:grid;grid-template-columns:170px 1fr;gap:10px 24px}
+dt{font-family:'Bricolage Grotesque',Arial,sans-serif;font-weight:800;font-size:17px}
+dd{margin:0}
+.contact p{font-size:22px;max-width:30em}
+footer{margin-top:72px;padding:24px 0 40px;border-top:1px solid var(--line);color:var(--soft);font-size:15px}
+@media(max-width:760px){
+.hero{grid-template-columns:1fr;gap:24px;padding-top:16px}
+.photo{width:150px;height:150px;order:-1}
+.proj,.cols{grid-template-columns:1fr;gap:10px}
+.cols{gap:32px}
+dl{grid-template-columns:1fr;gap:2px}
+dd{margin-bottom:12px}
+header.top nav{gap:16px}
+}
+</style>
 </head>
 <body>
-  <div class="card">
-    <h1>Nino Audren</h1>
-    <p>Étudiant en Ingénierie Informatique — Portfolio en construction 🚀</p>
-  </div>
-</body>
-</html>
-EOF
+<div class="wrap">
+<header class="top">
+<span>Nino Audren</span>
+<nav aria-label="Navigation principale"><a href="#projets">Projets</a><a href="#parcours">Parcours</a><a href="#contact">Contact</a></nav>
+</header>
+<main>
+<div class="hero">
+<div>
+<h1>Nino Audren</h1>
+<p>Élève-ingénieur en informatique à CY Tech. Je cherche une alternance à partir de septembre 2027.</p>
+<div class="btns">
+<a class="btn main" href="#projets">Voir mes projets</a>
+<a class="btn" href="CV_Nino_Audren.pdf">Télécharger mon CV</a>
+<a class="btn" href="#contact">Me contacter</a>
+</div>
+</div>
+<img class="photo" src="photo.png" alt="Portrait de Nino Audren" width="230" height="230">
+</div>
+</main>
+</div>
 
-cat << 'EOF' > index.html
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nino Audren - Portfolio</title>
-  <style>
-    body {
-      font-family: system-ui, -apple-system, sans-serif;
-      background-color: #0f172a;
-      color: #f8fafc;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      text-align: center;
-    }
-    .card {
-      padding: 2rem;
-      border: 1px solid #1e293b;
-      border-radius: 12px;
-      background: #1e293b66;
-    }
-    h1 { color: #38bdf8; margin-bottom: 0.5rem; }
-    p { color: #94a3b8; }
-  </style>
-</head>
-<body>
-  <div class="card">
-    <h1>Nino Audren</h1>
-    <p>Étudiant en Ingénierie Informatique — Portfolio en construction 🚀</p>
-  </div>
+<div class="band" role="img" aria-label="Animation d'un paquet d'onde qui rencontre un puits de potentiel">
+<canvas id="wave"></canvas>
+<div class="wrap"><p class="cap">Illustration d'un paquet d'onde rencontrant un puits de potentiel, inspirée de mon projet numérique sur l'effet Ramsauer–Townsend.</p></div>
+</div>
+
+<div class="wrap">
+<section id="projets">
+<h2>Projets</h2>
+<article class="proj">
+<div><h3>ICY-Trek</h3><p class="tech">PHP, JavaScript, HTML/CSS, JSON</p></div>
+<div><p>Site web de réservation de voyages, développé en équipe de trois en quatre phases. J'ai conçu les pages et l'affichage du site.</p><a href="https://github.com/TimKiCode/Click-journeY-MI1-H">Voir le dépôt sur GitHub</a></div>
+</article>
+<article class="proj">
+<div><h3>Effet Ramsauer–Townsend</h3><p class="tech">Python, numpy, matplotlib, LaTeX</p></div>
+<div><p>Simulation numérique de l'équation de Schrödinger, réalisée en binôme : propagation d'un paquet d'onde et courbe de transmission, avec un rapport rédigé en LaTeX.</p><a href="https://github.com/ninoadr/Projet_Numerique">Voir le dépôt sur GitHub</a></div>
+</article>
+<article class="proj">
+<div><h3>C-Wire</h3><p class="tech">Shell, awk, gnuplot, C</p></div>
+<div><p>Analyse de données du réseau électrique, en équipe de trois. J'ai réalisé la partie Shell : tri et filtrage des fichiers CSV selon le mode choisi, fichiers de sortie et graphiques.</p><a href="https://github.com/TimKiCode/C-wire-MI1-F">Voir le dépôt sur GitHub</a></div>
+</article>
+<article class="proj">
+<div><h3>Cosmic Yonder</h3><p class="tech">C, Makefile, Git</p></div>
+<div><p>Jeu en C réalisé à trois : mécanique des portes et du passage entre les salles, champ de vision du joueur et affichage de plusieurs salles.</p><a href="https://github.com/ninoadr/ProjetInfoJeu">Voir le dépôt sur GitHub</a></div>
+</article>
+</section>
+
+<section id="parcours">
+<h2>Parcours</h2>
+<div class="cols">
+<div>
+<h3 class="sub">Formation</h3>
+<ul class="list">
+<li><b>CY Tech, cycle ingénieur Informatique</b><span>Depuis septembre 2026, diplôme prévu en 2029</span></li>
+<li><b>CY Tech, cycle préparatoire Mathématiques-Informatique</b><span>2023 à 2025</span></li>
+<li><b>Lycée Fragonard, baccalauréat général</b><span>Mention Assez Bien, 2023</span></li>
+</ul>
+</div>
+<div>
+<h3 class="sub">Expériences</h3>
+<ul class="list">
+<li><b>Service civique, Éducation nationale</b><span>École maternelle, décembre 2025 à juillet 2026</span></li>
+<li><b>Vendeur, Speak Concept</b><span>Été 2025</span></li>
+<li><b>Employé de magasinage, ASWO International Services France</b><span>Été 2024</span></li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="competences">
+<h2>Compétences</h2>
+<dl>
+<dt>Programmation</dt><dd>Python, C avancé, Shell, HTML/CSS</dd>
+<dt>Outils</dt><dd>Git et GitHub, Linux, LaTeX</dd>
+<dt>En apprentissage</dt><dd>SQL, Java</dd>
+<dt>Mathématiques</dt><dd>Algèbre linéaire, analyse, probabilités, optimisation linéaire</dd>
+<dt>Langues</dt><dd>Français, anglais (B2), espagnol (A1)</dd>
+<dt>Hors études</dt><dd>Guitare, photographie, association musicale de l'école</dd>
+</dl>
+</section>
+
+<section id="contact" class="contact">
+<h2>Contact</h2>
+<p>Je cherche une alternance en informatique à partir de septembre 2027. Écrivez-moi, je réponds vite.</p>
+<p><a href="mailto:nino.audren@gmail.com">nino.audren@gmail.com</a><br>
+<a href="https://www.linkedin.com/in/nino-audren">LinkedIn</a> et <a href="https://github.com/ninoadr">GitHub</a></p>
+</section>
+<footer>Nino Audren, 2026</footer>
+</div>
+
+<script>
+const c=document.getElementById('wave'),x=c.getContext('2d');
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function size(){const r=devicePixelRatio||1;c.width=c.clientWidth*r;c.height=c.clientHeight*r;x.setTransform(r,0,0,r,0,0)}
+function frame(t){
+const w=c.clientWidth,h=c.clientHeight,mid=h/2,cs=getComputedStyle(document.documentElement);
+x.clearRect(0,0,w,h);
+x.fillStyle=cs.getPropertyValue('--well');x.fillRect(w*.4,0,w*.2,h);
+const T=12,p=((t/1000)%T)/T,xc=-.15+1.3*p,xr=.4-(xc-.4),k=60,s=.07,ph=t/250;
+const g=(u,c0,a)=>a*Math.exp(-(((u-c0)/s)**2));
+x.beginPath();x.strokeStyle=cs.getPropertyValue('--wave');x.lineWidth=2;
+for(let i=0;i<=w;i+=2){
+const u=i/w;let y;
+if(u<.4)y=g(u,xc,1)*Math.cos(k*u-ph)+(xc>.4?g(u,xr,.4)*Math.cos(-k*u-ph):0);
+else if(u<.6)y=g(u,xc,.9)*Math.cos(1.7*k*u-ph);
+else y=g(u,xc,.7)*Math.cos(k*u-ph);
+const py=mid-y*h*.4;i?x.lineTo(i,py):x.moveTo(i,py)}
+x.stroke();
+if(!reduce)requestAnimationFrame(frame)}
+size();
+addEventListener('resize',()=>{size();if(reduce)frame(6500)});
+reduce?frame(6500):requestAnimationFrame(frame);
+</script>
 </body>
 </html>
-EOF
